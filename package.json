@@ -1,0 +1,64 @@
+{
+  "name": "obc",
+  "description": "IO app admin cli for onboarding",
+  "version": "0.0.0",
+  "author": "Alessandro Ercolani @giux78",
+  "bin": {
+    "obc": "./bin/run"
+  },
+  "bugs": "https://github.com/pagopa/io-cli-admin/issues",
+  "dependencies": {
+    "@oclif/command": "^1",
+    "@oclif/config": "^1",
+    "@oclif/plugin-help": "^2",
+    "tslib": "^1",
+    "fp-ts": "1.12.0",
+    "io-ts": "1.8.5"
+  },
+  "devDependencies": {
+    "@oclif/dev-cli": "^1",
+    "@types/node": "^10",
+    "globby": "^10",
+    "ts-node": "^8",
+    "@types/jest": "^24.0.13",
+    "danger": "^8.0.0",
+    "danger-plugin-digitalcitizenship": "*",
+    "italia-tslint-rules": "*",
+    "jest": "^24.8.0",
+    "prettier": "^1.12.1",
+    "rimraf": "^2.6.2",
+    "ts-jest": "^24.0.2",
+    "tslint": "^5.1.0",
+    "typescript": "^3.5.0"
+  },
+  "engines": {
+    "node": ">=8.0.0"
+  },
+  "files": [
+    "/bin",
+    "/lib",
+    "/npm-shrinkwrap.json",
+    "/oclif.manifest.json"
+  ],
+  "homepage": "https://github.com/pagopa/io-cli-admin",
+  "keywords": [
+    "oclif"
+  ],
+  "license": "MIT",
+  "main": "lib/index.js",
+  "oclif": {
+    "commands": "./lib/commands",
+    "bin": "obc",
+    "plugins": [
+      "@oclif/plugin-help"
+    ]
+  },
+  "repository": "pagopa/io-cli-admin",
+  "scripts": {
+    "postpack": "rm -f oclif.manifest.json",
+    "prepack": "rm -rf lib && tsc -b && oclif-dev manifest && oclif-dev readme",
+    "test": "echo NO TESTS",
+    "version": "oclif-dev readme && git add README.md"
+  },
+  "types": "lib/index.d.ts"
+}
