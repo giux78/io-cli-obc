@@ -11,23 +11,33 @@
     "@oclif/command": "^1",
     "@oclif/config": "^1",
     "@oclif/plugin-help": "^2",
+    "@types/node-fetch": "^2.5.4",
+    "chalk": "^3.0.0",
+    "cli-ux": "^5.4.4",
+    "dotenv": "^8.2.0",
+    "fp-ts": "1.19.5",
+    "io-ts": "1.8.5",
+    "italia-ts-commons": "^5.1.13",
+    "italia-utils": "teamdigitale/io-utils-build-oas3#4.1.1-beta.3",
+    "logform": "^2.1.2",
+    "node-fetch": "^2.6.0",
+    "shx": "^0.3.2",
     "tslib": "^1",
-    "fp-ts": "1.12.0",
-    "io-ts": "1.8.5"
+    "winston": "^3.2.1"
   },
   "devDependencies": {
     "@oclif/dev-cli": "^1",
-    "@types/node": "^10",
-    "globby": "^10",
-    "ts-node": "^8",
     "@types/jest": "^24.0.13",
+    "@types/node": "^10",
     "danger": "^8.0.0",
     "danger-plugin-digitalcitizenship": "*",
+    "globby": "^10",
     "italia-tslint-rules": "*",
     "jest": "^24.8.0",
     "prettier": "^1.12.1",
     "rimraf": "^2.6.2",
     "ts-jest": "^24.0.2",
+    "ts-node": "^8",
     "tslint": "^5.1.0",
     "typescript": "^3.5.0"
   },
@@ -60,5 +70,8 @@
     "test": "echo NO TESTS",
     "version": "oclif-dev readme && git add README.md"
   },
-  "types": "lib/index.d.ts"
+  "types": "lib/index.d.ts",
+  "resolutions": {
+    "italia-ts-commons/fp-ts": "1.12.0"
+  }
 }
