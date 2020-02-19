@@ -6,7 +6,7 @@ import { TaskEither, tryCatch } from "fp-ts/lib/TaskEither";
 import { Errors } from "io-ts";
 import { errorsToReadableMessages } from "italia-ts-commons/lib/reporters";
 import fetch from "node-fetch";
-import { getRequiredEnvVar } from "../../commons/environments";
+import { BASE_URL_ADMIN, OCP_APIM } from "../../commons/config";
 import { Service } from "../../generated/Service";
 
 export class ServiceCreate extends Command {
@@ -100,17 +100,16 @@ export class ServiceCreate extends Command {
     );
   }
 
-  private post = (service: Service): TaskEither<Error, string> => {
-    return tryCatch(
+  private post = (service: Service): TaskEither<Error, string> =>
+    tryCatch(
       () =>
-        fetch(`${getRequiredEnvVar("BASE_URL_ADMIN")}/services`, {
+        fetch(`${BASE_URL_ADMIN}/services`, {
           body: JSON.stringify(service),
           headers: {
-            "Ocp-Apim-Subscription-Key": getRequiredEnvVar("OCP_APIM")
+            "Ocp-Apim-Subscription-Key": OCP_APIM
           },
           method: "post"
         }).then(res => res.text()),
       reason => new Error(String(reason))
     );
-  };
 }

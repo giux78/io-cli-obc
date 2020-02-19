@@ -26,17 +26,22 @@
     "winston": "^3.2.1"
   },
   "devDependencies": {
+    "@fancy-test/nock": "^0.1.1",
     "@oclif/dev-cli": "^1",
-    "@types/jest": "^24.0.13",
+    "@oclif/test": "^1",
+    "@types/chai": "^4",
+    "@types/mocha": "^5",
     "@types/node": "^10",
+    "chai": "^4",
     "danger": "^8.0.0",
     "danger-plugin-digitalcitizenship": "*",
     "globby": "^10",
     "italia-tslint-rules": "*",
-    "jest": "^24.8.0",
+    "mocha": "^5",
+    "nock": "^12.0.0",
+    "nyc": "^14",
     "prettier": "^1.12.1",
     "rimraf": "^2.6.2",
-    "ts-jest": "^24.0.2",
     "ts-node": "^8",
     "tslint": "^5.1.0",
     "typescript": "^3.5.0"
@@ -66,8 +71,9 @@
   "repository": "pagopa/io-cli-admin",
   "scripts": {
     "postpack": "rm -f oclif.manifest.json",
+    "posttest": "tslint -p test -t stylish",
     "prepack": "rm -rf lib && tsc -b && oclif-dev manifest && oclif-dev readme",
-    "test": "echo NO TESTS",
+    "test": "dotenv -e env.example && nyc --extension .ts mocha --forbid-only \"test/**/*.test.ts\"",
     "version": "oclif-dev readme && git add README.md"
   },
   "types": "lib/index.d.ts",
