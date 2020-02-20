@@ -6,7 +6,7 @@ dotenv.config();
 import { log } from "./logger";
 
 // Copy and paste form io-functions-oboarding.
-// Is there something into io-commons...?
+// Is there something into io-commons...? @Danilo e @Giuseppe
 /**
  * Checks that the environment variables with the provided name is defined,
  * if it is undefined logs an error and exits the process

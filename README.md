@@ -248,11 +248,11 @@ USAGE
   $ obc service:create
 
 OPTIONS
-  --authorized_cidrs=authorized_cidrs                  (required) Allowed source IPs or CIDRs for this service. String
-                                                       separated by , of single IP or a range of IPs and can be empty
+  --authorized_cidrs=authorized_cidrs                  Allowed source IPs or CIDRs for this service. String separated by
+                                                       , of single IP or a range of IPs and can be empty
 
-  --authorized_recipients=authorized_recipients        (required) If non empty, the service will be able to send
-                                                       messages only to these fiscal codes. Fiscal code format
+  --authorized_recipients=authorized_recipients        If non empty, the service will be able to send messages only to
+                                                       these fiscal codes. Fiscal code format
 
   --department_name=department_name                    (required) Name of the department of the organization
 

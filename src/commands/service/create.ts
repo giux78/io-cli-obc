@@ -16,14 +16,12 @@ export class ServiceCreate extends Command {
     authorized_cidrs: flags.string({
       default: "",
       description:
-        "Allowed source IPs or CIDRs for this service. String separated by , of single IP or a range of IPs and can be empty",
-      required: true
+        "Allowed source IPs or CIDRs for this service. String separated by , of single IP or a range of IPs and can be empty"
     }),
     authorized_recipients: flags.string({
       default: "",
       description:
-        "If non empty, the service will be able to send messages only to these fiscal codes. Fiscal code format",
-      required: true
+        "If non empty, the service will be able to send messages only to these fiscal codes. Fiscal code format"
     }),
     department_name: flags.string({
       description: "Name of the department of the organization",
