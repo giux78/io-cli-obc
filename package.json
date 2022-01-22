@@ -20,7 +20,7 @@
     "italia-ts-commons": "^5.1.13",
     "italia-utils": "teamdigitale/io-utils-build-oas3#4.1.1-beta.3",
     "logform": "^2.1.2",
-    "node-fetch": "^2.6.0",
+    "node-fetch": "^3.1.1",
     "shx": "^0.3.2",
     "tslib": "^1",
     "winston": "^3.2.1"
